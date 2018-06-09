@@ -1,0 +1,72 @@
+body{
+  background: url('../img/technology.png') repeat;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#top {
+  background: url('../img/tech_crunch.png') no-repeat;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
+#articleTitle {
+  padding: 10px;
+  background-color: #3d264b;
+  color: white;
+}
+
+#articleNav {
+  background-color: #3d264b;
+  color: white;
+}
+
+
+#articleBody {
+  padding: 20px;
+  background-color: #3d264b;
+  color: white;
+}
+
+#btnSignUp {
+  background-color: #3d264b;
+}
+
+#comments {
+  padding: 30px;
+}
+
+
+.articleBody{
+  height: 200px;
+  font-size: 20px;
+  overflow-y: scroll;
+  line-height: 150%;
+}
+
+#nameComment{
+  /*border-bottom: 2px solid #ec407a;*/
+  font-weight: bold;
+  background: 5f3a5c;
+  color: white;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #3d264b;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #3d264b;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #3d264b
+}
+
