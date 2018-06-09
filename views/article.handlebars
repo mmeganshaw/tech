@@ -29,14 +29,14 @@
 </div>
 
 {{!-- comments go here --}}
-<div class="row" style="color: white;">
+<div class="row" style="color:  #3d264b;">
   <div class="col s2"></div>
     <div class="col s8">
       <h5>Comments:</h5>
         {{#if article.comment}}
           {{#each article.comment}}
-            <div class="card">
-              <p id="nameComment">{{name}}</p>
+            <div class="card"  >
+              <p style="color: #3d264b; " id="nameComment">{{name}}</p>
               <p>{{body}}<p>
             </div>
           {{/each}}

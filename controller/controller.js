@@ -16,22 +16,21 @@ router.get('/', function(req, res) {
     res.redirect('/articles');
 });
 
-
 // A GET request to scrape the Verge website
 router.get('/scrape', function(req, res) {
     // First, we grab the body of the html with request
-    request("https://techcrunch.com/", function(error, response, html) {
+    request('http://www.theverge.com/tech', function(error, response, html) {
         // Then, we load that into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(html);
         var titlesArray = [];
         // Now, we grab every article
-        $('.li.river-block').each(function(i, element) {
+        $('.c-entry-box--compact__title').each(function(i, element) {
             // Save an empty result object
             var result = {};
 
             // Add the text and href of every link, and save them as properties of the result object
-            result.title = $(this).find("h2.post-title").text();
-            result.link = $(this).find("h2.post-title a").attr("href");
+            result.title = $(this).children('a').text();
+            result.link = $(this).children('a').attr('href');
 
             //ensures that no empty title or links are sent to mongodb
             if(result.title !== "" && result.link !== ""){
@@ -136,8 +135,8 @@ router.get('/readArticle/:id', function(req, res){
         request(link, function(error, response, html) {
           var $ = cheerio.load(html);
 
-          $('.article-content').each(function(i, element){
-            hbsObj.body = $(this).children('p').text();
+          $('.l-col__main').each(function(i, element){
+            hbsObj.body = $(this).children('.c-entry-content').children('p').text();
             //send article body and comments to article.handlbars through hbObj
             res.render('article', hbsObj);
             //prevents loop through so it doesn't return an empty hbsObj.body

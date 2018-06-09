@@ -21,9 +21,9 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-// mongoose.connect('mongodb://heroku_jxkjhg1v:6s68tem51mlionrj2sneb7b53c@ds127988.mlab.com:27988/heroku_jxkjhg1v');
+mongoose.connect('mongodb://heroku_ztj7z5b7:boc0tn8sojk7sr5gqbuu3ekh4r@ds153890.mlab.com:53890/heroku_ztj7z5b7');
 
-mongoose.connect('mongodb://localhost/new_scraped_news');
+// mongoose.connect('mongodb://localhost/news_news_news_news');
 
 
 var db = mongoose.connection;
@@ -35,7 +35,7 @@ db.once('open', function() {
 var routes = require('./controller/controller.js');
 app.use('/', routes);
 
-var port = process.env.PORT || 7000;
+var port = process.env.PORT || 5000;
 app.listen(port, function(){
   console.log('Listening on PORT ' + port);
 });
