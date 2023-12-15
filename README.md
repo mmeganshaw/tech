@@ -18,4 +18,3 @@ Technologies Used:
 - Morgan
 - Request
 
-Here is the live application, in all of its purple glory: https://calm-anchorage-51834.herokuapp.com/articles
